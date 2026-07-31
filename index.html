@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Shannon — Official Links | Journey With Shannon</title>
-<meta name="description" content="The official link hub for Journey With Shannon. Follow Shannon across every platform and unlock exclusive fitness and lifestyle content. 18+.">
+<meta name="description" content="The official link hub for Journey With Shannon (Shannon Parison) — Australian fitness &amp; lifestyle creator and founder of JWS Swimwear. Every official account in one place. 18+.">
 <link rel="canonical" href="https://vip.journeywithshannon.com/">
 <meta name="theme-color" content="#07090D">
 
@@ -199,28 +199,83 @@ h1{
   .row:hover .arrow{color:var(--blue)}
 }
 
-/* ---------- social rows ---------- */
-.rows{display:flex;flex-direction:column;gap:9px}
-.row{
-  display:flex;align-items:center;gap:14px;
-  background:var(--panel);
-  border:1px solid rgba(245,249,253,.07);
-  border-radius:14px;
-  padding:13px 16px;
+/* ---------- social slider ---------- */
+.slider{position:relative}
+.slider::after{
+  content:"";position:absolute;top:0;right:-20px;bottom:26px;width:54px;
+  background:linear-gradient(90deg,transparent,var(--stage));pointer-events:none;
+}
+.track{
+  display:flex;gap:10px;overflow-x:auto;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;padding:4px 0 14px;
+}
+.track::-webkit-scrollbar{display:none}
+.scard{
+  scroll-snap-align:start;flex:0 0 124px;
+  background:var(--panel);border:1px solid rgba(245,249,253,.07);
+  border-radius:16px;padding:18px 12px 14px;text-align:center;
   transition:border-color .18s ease, transform .18s ease;
 }
-.glyph{
-  width:34px;height:34px;border-radius:9px;flex-shrink:0;
-  background:var(--panel-2);
+.scard .glyph{
+  width:48px;height:48px;border-radius:50%;margin:0 auto 10px;
   display:flex;align-items:center;justify-content:center;
-  color:var(--blue);
+  background:rgba(0,175,240,.1);color:var(--blue);
+  box-shadow:0 0 18px rgba(0,175,240,.25);
 }
-.row:nth-child(even) .glyph{color:var(--pink)}
-.glyph svg{width:16px;height:16px;fill:currentColor}
-.row .info{min-width:0;flex:1}
-.row .p{font-size:12px;letter-spacing:.12em;font-weight:600}
-.row .h{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .arrow{color:var(--muted);font-size:14px;transition:color .18s ease}
+.scard:nth-child(even) .glyph{
+  background:rgba(255,45,120,.1);color:var(--pink);
+  box-shadow:0 0 18px rgba(255,45,120,.22);
+}
+.scard svg{width:20px;height:20px;fill:currentColor}
+.scard .p{font-size:10.5px;letter-spacing:.12em;font-weight:600;display:block}
+.scard .h{
+  font-size:9px;color:var(--muted);display:block;margin-top:3px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.dots{display:flex;gap:5px;justify-content:center}
+.dots i{width:5px;height:5px;border-radius:999px;background:rgba(124,135,152,.4);transition:width .2s ease, background .2s ease}
+.dots i.on{width:16px;background:var(--blue)}
+.hint{
+  display:block;text-align:center;font-size:9px;letter-spacing:.26em;
+  color:var(--muted);margin-top:10px;
+  animation:nudge 1.6s ease-in-out infinite;
+}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.sarrow{display:none}
+@media(hover:hover){
+  .scard:hover{border-color:var(--blue);transform:translateY(-2px)}
+  .sarrow{
+    display:flex;position:absolute;top:36%;transform:translateY(-50%);
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid rgba(245,249,253,.15);
+    background:rgba(13,17,25,.88);backdrop-filter:blur(6px);
+    color:var(--white);align-items:center;justify-content:center;
+    cursor:pointer;z-index:2;font-size:14px;
+  }
+  .sarrow.prev{left:-12px}
+  .sarrow.next{right:-12px}
+  .sarrow:hover{border-color:var(--blue);color:var(--blue)}
+  .hint{display:none}
+}
+
+/* ---------- about ---------- */
+.about{
+  margin-top:34px;
+  background:var(--panel);
+  border:1px solid rgba(245,249,253,.07);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  font-size:12.5px;color:var(--muted);line-height:1.8;
+}
+.about b{color:var(--white);font-weight:600}
+.about a{color:var(--blue);text-decoration:none}
+.jws-strip{
+  display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;
+  margin:18px 0 4px;font-size:11px;
+}
+.jws-strip a{color:var(--muted);border-bottom:1px solid rgba(124,135,152,.35);padding-bottom:1px;transition:color .18s ease,border-color .18s ease}
+@media(hover:hover){.jws-strip a:hover{color:var(--blue);border-color:var(--blue)}}
 
 /* ---------- footer ---------- */
 footer{
@@ -291,71 +346,80 @@ footer .pink{color:var(--pink)}
   <!-- socials -->
   <p class="eyebrow">Follow the journey</p>
 
-  <div class="rows">
-
-    <a class="row" href="https://youtube.com/@journeywithshannon?si=4gWSuRNL3HQUQNvW" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7L15.8 12z"/></svg></span>
-      <span class="info"><span class="p">YOUTUBE</span><br><span class="h">@journeywithshannon</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://x.com/journeywshannon?s=11" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L7.1 3.7H5.3z"/></svg></span>
-      <span class="info"><span class="p">X</span><br><span class="h">@journeywshannon</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.instagram.com/journeywithshannon__?igsh=MXM5NTBlbzViYTVuNw%3D%3D&utm_source=qr" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
-      <span class="info"><span class="p">INSTAGRAM</span><br><span class="h">@journeywithshannon__</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.instagram.com/journeywithshannon_?igsh=MXFnMWVvZnpyODNidg%3D%3D&utm_source=qr" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
-      <span class="info"><span class="p">INSTAGRAM &middot; 2</span><br><span class="h">@journeywithshannon_</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.tiktok.com/@journeywithshannon?_r=1&_t=ZS-98A6J1pxTyW" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.6 1h-3.3v14.9a3.1 3.1 0 1 1-3.1-3.1c.3 0 .7.1 1 .2V9.6a6.5 6.5 0 0 0-1-.1 6.4 6.4 0 1 0 6.4 6.4V8.2A8 8 0 0 0 21 9.7V6.4a4.8 4.8 0 0 1-4.4-5.4z"/></svg></span>
-      <span class="info"><span class="p">TIKTOK</span><br><span class="h">@journeywithshannon</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.threads.com/@journeywithshannon__?igshid=NTc4MTIwNjQ2YQ%3D%3D" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.7 11.2c-.1 0-.2-.1-.3-.1-.2-3.2-1.9-5-4.9-5h-.1c-1.8 0-3.2.7-4.1 2.1l1.6 1.1c.7-1 1.7-1.2 2.5-1.2.9 0 1.7.3 2.1.8.3.4.6.9.6 1.6a11 11 0 0 0-2.5-.1c-2.5.1-4.1 1.6-4 3.6 0 1 .6 1.9 1.5 2.4.8.5 1.7.7 2.7.6 1.3-.1 2.3-.6 3-1.5.5-.7.8-1.6.9-2.7.6.4 1 .8 1.3 1.4.4 1 .5 2.6-.9 4-1.2 1.2-2.7 1.7-4.9 1.7-2.5 0-4.3-.8-5.5-2.4-1.1-1.5-1.7-3.6-1.7-6.3 0-2.7.6-4.8 1.7-6.3C7.9 3.3 9.7 2.5 12.2 2.5c2.5 0 4.4.8 5.6 2.4.6.8 1 1.7 1.3 2.9l1.9-.5c-.3-1.4-.9-2.6-1.6-3.6C17.8 1.6 15.4.6 12.2.6 9.1.6 6.7 1.6 5.1 3.7 3.7 5.6 3 8.1 3 11.1s.7 5.6 2.1 7.4c1.6 2.1 4 3.2 7.1 3.2 2.7 0 4.7-.7 6.3-2.3 2.1-2.1 2-4.7 1.3-6.3-.5-1.2-1.5-2.1-2.7-2.7l.6.8zm-4.9 4.4c-1.1.1-2.2-.4-2.3-1.5 0-.8.6-1.7 2.4-1.8h.5c.7 0 1.3.1 1.9.2-.2 2.2-1.3 3-2.5 3.1z"/></svg></span>
-      <span class="info"><span class="p">THREADS</span><br><span class="h">@journeywithshannon__</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://bsky.app/profile/journeywithshannon.bsky.social" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.4 2.8C8 4.7 10.8 8.6 12 10.7c1.2-2.1 4-6 6.6-7.9C20.4 1.4 23 .3 23 3.8c0 .7-.4 5.8-.6 6.6-.8 2.9-3.6 3.6-6.1 3.2 4.4.7 5.5 3.2 3.1 5.6-4.6 4.6-6.6-1.2-7.2-2.6-.1-.3-.2-.4-.2-.3 0-.1-.1 0-.2.3-.6 1.4-2.6 7.2-7.2 2.6-2.4-2.4-1.3-4.9 3.1-5.6-2.5.4-5.3-.3-6.1-3.2-.2-.8-.6-5.9-.6-6.6 0-3.5 2.6-2.4 4.4-1z"/></svg></span>
-      <span class="info"><span class="p">BLUESKY</span><br><span class="h">@journeywithshannon.bsky.social</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.facebook.com/share/1JM5QaSqea/?mibextid=wwXIfr" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
-      <span class="info"><span class="p">FACEBOOK</span><br><span class="h">Journey With Shannon — page</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.facebook.com/share/18BB4VMApp/?mibextid=wwXIfr" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
-      <span class="info"><span class="p">FACEBOOK &middot; 2</span><br><span class="h">Second page</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
-    <a class="row" href="https://www.facebook.com/share/g/18r8P5c9DA/?mibextid=wwXIfr" rel="noopener">
-      <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12.75a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8zm6.8-1.13a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm-13.6 0a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm13.6 1.7c-.9 0-1.8.3-2.5.9a5.7 5.7 0 0 1 2 4.3v.6h3.9a.85.85 0 0 0 .85-.85 4.25 4.25 0 0 0-4.25-4.95zm-13.6 0A4.25 4.25 0 0 0 .95 18.3c0 .5.4.85.85.85h3.9v-.6c0-1.7.75-3.2 2-4.3a3.9 3.9 0 0 0-2.5-.93zm6.8 1.13a4.53 4.53 0 0 0-4.53 4.53v.6c0 .5.4.85.85.85h7.36c.47 0 .85-.38.85-.85v-.6A4.53 4.53 0 0 0 12 14.45z"/></svg></span>
-      <span class="info"><span class="p">FACEBOOK GROUP</span><br><span class="h">Join the community</span></span>
-      <span class="arrow" aria-hidden="true">&rarr;</span>
-    </a>
-
+  <div class="slider">
+    <button class="sarrow prev" aria-label="Scroll back">&larr;</button>
+    <button class="sarrow next" aria-label="Scroll forward">&rarr;</button>
+    <div class="track" id="strack" aria-label="Social links">
+      <a class="scard" href="https://youtube.com/@journeywithshannon?si=4gWSuRNL3HQUQNvW" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7L15.8 12z"/></svg></span>
+        <span class="p">YOUTUBE</span>
+        <span class="h">@journeywithshannon</span>
+      </a>
+      <a class="scard" href="https://x.com/journeywshannon?s=11" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L7.1 3.7H5.3z"/></svg></span>
+        <span class="p">X</span>
+        <span class="h">@journeywshannon</span>
+      </a>
+      <a class="scard" href="https://www.instagram.com/journeywithshannon__?igsh=MXM5NTBlbzViYTVuNw%3D%3D&utm_source=qr" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
+        <span class="p">INSTAGRAM</span>
+        <span class="h">@journeywithshannon__</span>
+      </a>
+      <a class="scard" href="https://www.instagram.com/journeywithshannon_?igsh=MXFnMWVvZnpyODNidg%3D%3D&utm_source=qr" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
+        <span class="p">INSTAGRAM &middot; 2</span>
+        <span class="h">@journeywithshannon_</span>
+      </a>
+      <a class="scard" href="https://www.tiktok.com/@journeywithshannon?_r=1&_t=ZS-98A6J1pxTyW" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.6 1h-3.3v14.9a3.1 3.1 0 1 1-3.1-3.1c.3 0 .7.1 1 .2V9.6a6.5 6.5 0 0 0-1-.1 6.4 6.4 0 1 0 6.4 6.4V8.2A8 8 0 0 0 21 9.7V6.4a4.8 4.8 0 0 1-4.4-5.4z"/></svg></span>
+        <span class="p">TIKTOK</span>
+        <span class="h">@journeywithshannon</span>
+      </a>
+      <a class="scard" href="https://www.threads.com/@journeywithshannon__?igshid=NTc4MTIwNjQ2YQ%3D%3D" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.7 11.2c-.1 0-.2-.1-.3-.1-.2-3.2-1.9-5-4.9-5h-.1c-1.8 0-3.2.7-4.1 2.1l1.6 1.1c.7-1 1.7-1.2 2.5-1.2.9 0 1.7.3 2.1.8.3.4.6.9.6 1.6a11 11 0 0 0-2.5-.1c-2.5.1-4.1 1.6-4 3.6 0 1 .6 1.9 1.5 2.4.8.5 1.7.7 2.7.6 1.3-.1 2.3-.6 3-1.5.5-.7.8-1.6.9-2.7.6.4 1 .8 1.3 1.4.4 1 .5 2.6-.9 4-1.2 1.2-2.7 1.7-4.9 1.7-2.5 0-4.3-.8-5.5-2.4-1.1-1.5-1.7-3.6-1.7-6.3 0-2.7.6-4.8 1.7-6.3C7.9 3.3 9.7 2.5 12.2 2.5c2.5 0 4.4.8 5.6 2.4.6.8 1 1.7 1.3 2.9l1.9-.5c-.3-1.4-.9-2.6-1.6-3.6C17.8 1.6 15.4.6 12.2.6 9.1.6 6.7 1.6 5.1 3.7 3.7 5.6 3 8.1 3 11.1s.7 5.6 2.1 7.4c1.6 2.1 4 3.2 7.1 3.2 2.7 0 4.7-.7 6.3-2.3 2.1-2.1 2-4.7 1.3-6.3-.5-1.2-1.5-2.1-2.7-2.7l.6.8zm-4.9 4.4c-1.1.1-2.2-.4-2.3-1.5 0-.8.6-1.7 2.4-1.8h.5c.7 0 1.3.1 1.9.2-.2 2.2-1.3 3-2.5 3.1z"/></svg></span>
+        <span class="p">THREADS</span>
+        <span class="h">@journeywithshannon__</span>
+      </a>
+      <a class="scard" href="https://bsky.app/profile/journeywithshannon.bsky.social" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.4 2.8C8 4.7 10.8 8.6 12 10.7c1.2-2.1 4-6 6.6-7.9C20.4 1.4 23 .3 23 3.8c0 .7-.4 5.8-.6 6.6-.8 2.9-3.6 3.6-6.1 3.2 4.4.7 5.5 3.2 3.1 5.6-4.6 4.6-6.6-1.2-7.2-2.6-.1-.3-.2-.4-.2-.3 0-.1-.1 0-.2.3-.6 1.4-2.6 7.2-7.2 2.6-2.4-2.4-1.3-4.9 3.1-5.6-2.5.4-5.3-.3-6.1-3.2-.2-.8-.6-5.9-.6-6.6 0-3.5 2.6-2.4 4.4-1z"/></svg></span>
+        <span class="p">BLUESKY</span>
+        <span class="h">@journeywithshannon.bsky.social</span>
+      </a>
+      <a class="scard" href="https://www.facebook.com/share/1JM5QaSqea/?mibextid=wwXIfr" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
+        <span class="p">FACEBOOK</span>
+        <span class="h">Journey With Shannon — page</span>
+      </a>
+      <a class="scard" href="https://www.facebook.com/share/18BB4VMApp/?mibextid=wwXIfr" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
+        <span class="p">FACEBOOK &middot; 2</span>
+        <span class="h">Second page</span>
+      </a>
+      <a class="scard" href="https://www.facebook.com/share/g/18r8P5c9DA/?mibextid=wwXIfr" rel="noopener">
+        <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12.75a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8zm6.8-1.13a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm-13.6 0a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm13.6 1.7c-.9 0-1.8.3-2.5.9a5.7 5.7 0 0 1 2 4.3v.6h3.9a.85.85 0 0 0 .85-.85 4.25 4.25 0 0 0-4.25-4.95zm-13.6 0A4.25 4.25 0 0 0 .95 18.3c0 .5.4.85.85.85h3.9v-.6c0-1.7.75-3.2 2-4.3a3.9 3.9 0 0 0-2.5-.93zm6.8 1.13a4.53 4.53 0 0 0-4.53 4.53v.6c0 .5.4.85.85.85h7.36c.47 0 .85-.38.85-.85v-.6A4.53 4.53 0 0 0 12 14.45z"/></svg></span>
+        <span class="p">FACEBOOK GROUP</span>
+        <span class="h">Join the community</span>
+      </a>
+    </div>
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="hint" id="shint">SWIPE FOR MORE &rarr;</span>
   </div>
 
+  <p class="eyebrow">About</p>
+  <section class="about">
+    <b>Shannon Parison</b> — better known as <b>Journey With Shannon</b> — is an Australian
+    fitness and lifestyle creator and the founder of <a href="https://journeywithshannon.com" rel="noopener">JWS Swimwear</a>.
+    From training and transformation content to life in Australia, the journey is documented
+    across every platform on this page — with exclusive behind-the-scenes content for subscribers (18+).
+  </section>
+
   <footer>
+    <nav class="jws-strip" aria-label="More from JWS">
+      <a href="https://journeywithshannon.com" rel="noopener">JWS Swimwear</a>
+      <a href="https://trade.journeywithshannon.com" rel="noopener">Learn to Trade</a>
+      <a href="https://app.journeywithshannon.com" rel="noopener">Journey App</a>
+      <a href="https://store.journeywithshannon.com" rel="noopener">JWS Store</a>
+    </nav>
     <p><span class="blue">Journey With Shannon</span> &middot; Australia</p>
     <p>Exclusive content is strictly <span class="pink">18+</span>. This page contains no explicit material.</p>
     <p>&copy; <span id="yr">2026</span> JWS. All links above are the only official Journey With Shannon accounts.</p>
@@ -365,6 +429,26 @@ footer .pink{color:var(--pink)}
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  var track = document.getElementById('strack');
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.dots i'));
+  var hint = document.getElementById('shint');
+  if(!track || !dots.length) return;
+  function cardW(){ return track.firstElementChild.getBoundingClientRect().width + 10; }
+  function sync(){
+    var i = Math.min(dots.length - 1, Math.round(track.scrollLeft / cardW()));
+    dots.forEach(function(d,k){ d.classList.toggle('on', k === i); });
+    if(hint && track.scrollLeft > 30){ hint.style.display = 'none'; }
+  }
+  track.addEventListener('scroll', sync, {passive:true});
+  sync();
+  document.querySelectorAll('.sarrow').forEach(function(b){
+    b.addEventListener('click', function(){
+      var dir = b.classList.contains('next') ? 1 : -1;
+      track.scrollBy({left: dir * cardW() * 2, behavior:'smooth'});
+    });
+  });
+})();
 </script>
 </body>
 </html>
