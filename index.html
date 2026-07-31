@@ -6,6 +6,7 @@
 <title>Shannon — Official Links | Journey With Shannon</title>
 <meta name="description" content="The official link hub for Journey With Shannon. Follow Shannon across every platform and unlock exclusive fitness and lifestyle content. 18+.">
 <link rel="canonical" href="https://vip.journeywithshannon.com/">
+<meta name="theme-color" content="#07090D">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -50,168 +51,152 @@
 
 <style>
 :root{
-  --ink:#0A0A0B;
-  --panel:#131315;
-  --panel-2:#18181B;
-  --gold:#D4AF37;
-  --gold-bright:#F0D77B;
-  --gold-deep:#9C7C1E;
-  --paper:#F5F1E8;
-  --muted:#8F8A7C;
-  --line:rgba(212,175,55,.22);
+  --stage:#07090D;          /* near-black stage */
+  --panel:#0D1119;
+  --panel-2:#131A26;
+  --blue:#00AFF0;           /* OnlyFans blue */
+  --blue-deep:#0086C9;
+  --pink:#FF2D78;           /* revue neon pink */
+  --pink-deep:#C71B57;
+  --white:#F5F9FD;
+  --muted:#7C8798;
+  --line-blue:rgba(0,175,240,.28);
+  --line-pink:rgba(255,45,120,.28);
   --radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--ink);
-  color:var(--paper);
+  background:var(--stage);
+  color:var(--white);
   font-family:'JetBrains Mono',ui-monospace,monospace;
   font-size:15px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   min-height:100vh;
-  background-image:radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,175,55,.08), transparent);
+  overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
 
-.wrap{max-width:520px;margin:0 auto;padding:0 20px calc(56px + env(safe-area-inset-bottom))}
+.wrap{max-width:540px;margin:0 auto;padding:0 20px calc(56px + env(safe-area-inset-bottom));position:relative}
+
+/* ---------- stage spotlights (signature) ---------- */
+.lights{position:fixed;inset:0;pointer-events:none;z-index:0}
+.beam{position:absolute;width:130vw;height:130vw;max-width:900px;max-height:900px;border-radius:50%;filter:blur(60px);opacity:.5}
+.beam-blue{top:-18%;left:-38%;background:radial-gradient(circle,rgba(0,175,240,.34),transparent 60%);animation:breathe 7s ease-in-out infinite}
+.beam-pink{top:-10%;right:-42%;background:radial-gradient(circle,rgba(255,45,120,.26),transparent 60%);animation:breathe 7s ease-in-out 3.5s infinite}
+@keyframes breathe{0%,100%{opacity:.35}50%{opacity:.6}}
+.wrap>*{position:relative;z-index:1}
 
 /* ---------- nav ---------- */
-nav{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 0 6px;
-}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0 6px}
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{width:30px;height:30px;object-fit:contain}
-.brand span{
-  font-family:'Archivo Black',sans-serif;
-  font-size:12px;letter-spacing:.18em;color:var(--paper);
-}
+.brand span{font-family:'Archivo Black',sans-serif;font-size:12px;letter-spacing:.18em}
 .age-pill{
-  font-size:10px;letter-spacing:.14em;color:var(--gold);
-  border:1px solid var(--line);border-radius:999px;
+  font-size:10px;letter-spacing:.14em;color:var(--pink);
+  border:1px solid var(--line-pink);border-radius:999px;
   padding:4px 10px;white-space:nowrap;
 }
 
-/* ---------- VIP card (signature) ---------- */
-.card{
-  position:relative;
-  margin:26px 0 30px;
-  border-radius:22px;
-  padding:2px; /* gold edge */
-  background:linear-gradient(135deg,var(--gold-deep),var(--gold-bright) 40%,var(--gold-deep) 75%,var(--gold-bright));
-  box-shadow:0 24px 60px -24px rgba(212,175,55,.35), 0 8px 30px rgba(0,0,0,.6);
+/* ---------- show poster hero ---------- */
+header.hero{text-align:center;padding:34px 0 8px}
+.eyebrow-top{
+  display:inline-block;
+  font-size:10px;letter-spacing:.34em;color:var(--blue);
+  border:1px solid var(--line-blue);border-radius:999px;
+  padding:6px 16px;margin-bottom:22px;
+  background:rgba(0,175,240,.06);
 }
-.card-inner{
-  position:relative;
-  border-radius:20px;
-  background:
-    radial-gradient(120% 100% at 100% 0%, rgba(212,175,55,.14), transparent 55%),
-    linear-gradient(160deg,#1A1A1D,#0C0C0E 70%);
-  padding:30px 26px 26px;
-  overflow:hidden;
-}
-/* sheen sweep */
-.card-inner::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.10) 46%,rgba(255,255,255,.02) 52%,transparent 64%);
-  transform:translateX(-120%);
-  animation:sheen 6s ease-in-out infinite;
-  pointer-events:none;
-}
-@keyframes sheen{
-  0%,55%{transform:translateX(-120%)}
-  75%,100%{transform:translateX(120%)}
-}
-.card-top{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:22px;
-}
-.card-label{
-  font-size:10px;letter-spacing:.28em;color:var(--gold);
-}
-.card-chip{
-  width:34px;height:26px;border-radius:6px;
-  background:linear-gradient(135deg,var(--gold-bright),var(--gold-deep));
-  opacity:.9;
-  position:relative;
-}
-.card-chip::before{
-  content:"";position:absolute;inset:7px 5px;
-  border:1px solid rgba(10,10,11,.5);border-radius:3px;
-}
-.portrait-row{display:flex;align-items:center;gap:18px}
 .portrait{
-  width:86px;height:86px;border-radius:50%;
-  padding:3px;
-  background:conic-gradient(from 0deg,var(--gold-deep),var(--gold-bright),var(--gold-deep),var(--gold-bright),var(--gold-deep));
-  flex-shrink:0;
+  width:118px;height:118px;border-radius:50%;
+  margin:0 auto 20px;padding:3px;
+  background:conic-gradient(from 40deg,var(--blue),var(--pink),var(--blue));
+  box-shadow:0 0 44px rgba(0,175,240,.35), 0 0 80px rgba(255,45,120,.18);
 }
-.portrait img{
-  width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
-  background:var(--panel-2);
-}
+.portrait img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;background:var(--panel-2)}
 .portrait .mono-fallback{
-  width:100%;height:100%;border-radius:50%;
-  background:var(--panel-2);
+  width:100%;height:100%;border-radius:50%;background:var(--panel-2);
   display:none;align-items:center;justify-content:center;
-  font-family:'Archivo Black',sans-serif;font-size:34px;color:var(--gold);
+  font-family:'Archivo Black',sans-serif;font-size:44px;color:var(--blue);
 }
+.portrait .mono-fallback img{width:62%;height:62%;object-fit:contain}
 h1{
   font-family:'Archivo Black',sans-serif;
-  font-size:clamp(24px,7vw,30px);
-  letter-spacing:.02em;line-height:1.1;
-  color:var(--paper);
+  font-size:clamp(28px,9.2vw,48px);
+  line-height:.95;letter-spacing:.01em;
+  text-transform:uppercase;
+  background:linear-gradient(100deg,var(--white) 30%,var(--blue) 55%,var(--pink) 85%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:var(--blue);
 }
-.tagline{margin-top:6px;font-size:12px;letter-spacing:.08em;color:var(--muted)}
-.card-note{
-  margin-top:20px;padding-top:16px;
-  border-top:1px solid rgba(245,241,232,.08);
+.tagline{
+  margin-top:12px;font-size:12px;letter-spacing:.22em;color:var(--muted);
+  text-transform:uppercase;
+}
+.tagline b{color:var(--white);font-weight:600}
+.hero-note{
+  margin:20px auto 0;max-width:400px;
   font-size:12px;color:var(--muted);line-height:1.7;
 }
-.card-note em{color:var(--gold);font-style:normal}
+.hero-note em{color:var(--blue);font-style:normal}
 
-/* ---------- primary CTAs ---------- */
+/* ---------- access tiers (Magic Men package motif) ---------- */
 .eyebrow{
-  font-size:10px;letter-spacing:.3em;color:var(--gold);
-  text-align:center;margin:30px 0 14px;
+  display:flex;align-items:center;gap:14px;
+  font-size:10px;letter-spacing:.3em;color:var(--muted);
+  margin:34px 0 16px;text-transform:uppercase;justify-content:center;
 }
-.cta{
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  border-radius:var(--radius);
-  padding:18px 20px;
-  margin-bottom:12px;
+.eyebrow::before,.eyebrow::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(124,135,152,.4))}
+.eyebrow::after{background:linear-gradient(90deg,rgba(124,135,152,.4),transparent)}
+
+.tier{
+  display:block;border-radius:var(--radius);
+  padding:22px;margin-bottom:14px;
+  position:relative;overflow:hidden;
   transition:transform .18s ease, box-shadow .18s ease;
 }
-.cta .t{font-family:'Archivo Black',sans-serif;font-size:16px;letter-spacing:.03em}
-.cta .s{font-size:11px;margin-top:3px;letter-spacing:.04em}
-.cta .arrow{
-  width:38px;height:38px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;
+.tier .tag{
+  display:inline-block;font-size:9px;letter-spacing:.26em;
+  border-radius:999px;padding:4px 12px;margin-bottom:12px;
 }
-.cta-of{
-  background:linear-gradient(135deg,var(--gold-bright),var(--gold) 55%,var(--gold-deep));
-  color:#141310;
-  box-shadow:0 14px 34px -12px rgba(212,175,55,.5);
+.tier .t{font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:.02em;text-transform:uppercase}
+.tier .s{display:block;font-size:12px;margin-top:8px;line-height:1.65}
+.tier .go{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;font-size:11px;letter-spacing:.18em;font-weight:600;
+  border-radius:999px;padding:12px 22px;text-transform:uppercase;
 }
-.cta-of .s{color:rgba(20,19,16,.75)}
-.cta-of .arrow{background:rgba(10,10,11,.85);color:var(--gold-bright)}
-.cta-tg{
+.tier-of{
+  background:linear-gradient(150deg,#00AFF0 0%,#0086C9 70%,#006DA6 100%);
+  color:#04121B;
+  box-shadow:0 18px 44px -14px rgba(0,175,240,.55);
+}
+.tier-of .tag{background:rgba(4,18,27,.8);color:var(--blue)}
+.tier-of .s{color:rgba(4,18,27,.8)}
+.tier-of .go{background:#04121B;color:var(--blue)}
+.tier-tg{
   background:var(--panel);
-  border:1px solid var(--line);
-  color:var(--paper);
+  border:1px solid var(--line-pink);
+  color:var(--white);
+  box-shadow:0 18px 44px -18px rgba(255,45,120,.35);
 }
-.cta-tg .s{color:var(--muted)}
-.cta-tg .arrow{border:1px solid var(--line);color:var(--gold)}
+.tier-tg .tag{background:rgba(255,45,120,.12);color:var(--pink);border:1px solid var(--line-pink)}
+.tier-tg .s{color:var(--muted)}
+.tier-tg .go{background:linear-gradient(120deg,var(--pink),var(--pink-deep));color:#1A040C}
+/* corner shine on tiers */
+.tier::after{
+  content:"";position:absolute;top:0;right:0;width:46%;height:100%;
+  background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.10) 55%,transparent 70%);
+  pointer-events:none;
+}
 @media(hover:hover){
-  .cta:hover{transform:translateY(-2px)}
-  .cta-of:hover{box-shadow:0 20px 44px -12px rgba(212,175,55,.65)}
-  .cta-tg:hover{border-color:var(--gold)}
-  .row:hover{border-color:var(--gold);transform:translateY(-1px)}
-  .row:hover .go{color:var(--gold)}
+  .tier:hover{transform:translateY(-3px)}
+  .tier-of:hover{box-shadow:0 26px 56px -14px rgba(0,175,240,.7)}
+  .tier-tg:hover{box-shadow:0 26px 56px -18px rgba(255,45,120,.5)}
+  .row:hover{border-color:var(--blue);transform:translateY(-1px)}
+  .row:hover .arrow{color:var(--blue)}
 }
 
 /* ---------- social rows ---------- */
@@ -219,7 +204,7 @@ h1{
 .row{
   display:flex;align-items:center;gap:14px;
   background:var(--panel);
-  border:1px solid rgba(245,241,232,.07);
+  border:1px solid rgba(245,249,253,.07);
   border-radius:14px;
   padding:13px 16px;
   transition:border-color .18s ease, transform .18s ease;
@@ -228,31 +213,38 @@ h1{
   width:34px;height:34px;border-radius:9px;flex-shrink:0;
   background:var(--panel-2);
   display:flex;align-items:center;justify-content:center;
-  color:var(--gold);
+  color:var(--blue);
 }
+.row:nth-child(even) .glyph{color:var(--pink)}
 .glyph svg{width:16px;height:16px;fill:currentColor}
 .row .info{min-width:0;flex:1}
-.row .p{font-size:12px;letter-spacing:.12em;color:var(--paper);font-weight:600}
+.row .p{font-size:12px;letter-spacing:.12em;font-weight:600}
 .row .h{font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .go{color:var(--muted);font-size:14px;transition:color .18s ease}
+.row .arrow{color:var(--muted);font-size:14px;transition:color .18s ease}
 
 /* ---------- footer ---------- */
 footer{
-  margin-top:40px;padding-top:22px;
-  border-top:1px solid rgba(245,241,232,.07);
-  font-size:11px;color:var(--muted);line-height:1.8;
-  text-align:center;
+  margin-top:42px;padding-top:22px;
+  border-top:1px solid rgba(245,249,253,.07);
+  font-size:11px;color:var(--muted);line-height:1.8;text-align:center;
 }
-footer .gold{color:var(--gold)}
+footer .blue{color:var(--blue)}
+footer .pink{color:var(--pink)}
 
 @media (prefers-reduced-motion:reduce){
-  .card-inner::after{animation:none}
-  .cta,.row{transition:none}
+  .beam-blue,.beam-pink{animation:none}
+  .tier,.row{transition:none}
   html{scroll-behavior:auto}
 }
 </style>
 </head>
 <body>
+
+<div class="lights" aria-hidden="true">
+  <div class="beam beam-blue"></div>
+  <div class="beam beam-pink"></div>
+</div>
+
 <div class="wrap">
 
   <nav>
@@ -263,120 +255,109 @@ footer .gold{color:var(--gold)}
     <span class="age-pill">18+ CONTENT</span>
   </nav>
 
-  <!-- VIP membership card -->
-  <section class="card" aria-label="Shannon">
-    <div class="card-inner">
-      <div class="card-top">
-        <span class="card-label">VIP &middot; OFFICIAL LINKS</span>
-        <span class="card-chip" aria-hidden="true"></span>
-      </div>
-      <div class="portrait-row">
-        <div class="portrait">
-          <img src="shannon.jpg" alt="Shannon"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <span class="mono-fallback" aria-hidden="true">S</span>
-        </div>
-        <div>
-          <h1>SHANNON</h1>
-          <p class="tagline">Fitness &middot; Lifestyle &middot; Exclusive content</p>
-        </div>
-      </div>
-      <p class="card-note">
-        This is the official home of <em>Journey With Shannon</em> — every real link in one
-        place. If it's not on this page, it's not me.
-      </p>
+  <!-- show poster hero -->
+  <header class="hero">
+    <span class="eyebrow-top">AUSTRALIA'S JOURNEY &middot; LIVE NOW</span>
+    <div class="portrait">
+      <img src="shannon.jpg" alt="Shannon"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="mono-fallback" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png" alt=""></span>
     </div>
-  </section>
+    <h1>Journey With<br>Shannon</h1>
+    <p class="tagline"><b>Fitness</b> &middot; Lifestyle &middot; <b>Exclusive content</b></p>
+    <p class="hero-note">
+      The official home of <em>Journey With Shannon</em> — every real link in one place.
+      If it's not on this page, it's not me.
+    </p>
+  </header>
 
-  <!-- primary -->
-  <p class="eyebrow">START HERE</p>
+  <!-- access tiers -->
+  <p class="eyebrow">Choose your access</p>
 
-  <a class="cta cta-of" href="https://onlyfans.com/journeywithshannon" rel="noopener">
-    <span>
-      <span class="t">ONLYFANS</span><br>
-      <span class="s">Free page — exclusive content &amp; behind the scenes (18+)</span>
-    </span>
-    <span class="arrow" aria-hidden="true">&rarr;</span>
+  <a class="tier tier-of" href="https://onlyfans.com/journeywithshannon" rel="noopener">
+    <span class="tag">SUBSCRIPTION</span>
+    <span class="t">OnlyFans</span>
+    <span class="s">My subscription page — exclusive content &amp; behind the scenes you won't see anywhere else. 18+.</span>
+    <span class="go">Subscribe &rarr;</span>
   </a>
 
-  <a class="cta cta-tg" href="https://t.me/vipjws" rel="noopener">
-    <span>
-      <span class="t">TELEGRAM VIP</span><br>
-      <span class="s">My chat hub — updates first, talk to me directly</span>
-    </span>
-    <span class="arrow" aria-hidden="true">&rarr;</span>
+  <a class="tier tier-tg" href="https://t.me/vipjws" rel="noopener">
+    <span class="tag">FREE TO JOIN</span>
+    <span class="t">Telegram VIP</span>
+    <span class="s">My central chat page — updates drop here first, and you can talk to me directly. Free to join.</span>
+    <span class="go">Join free &rarr;</span>
   </a>
 
   <!-- socials -->
-  <p class="eyebrow">FOLLOW THE JOURNEY</p>
+  <p class="eyebrow">Follow the journey</p>
 
   <div class="rows">
 
     <a class="row" href="https://youtube.com/@journeywithshannon?si=4gWSuRNL3HQUQNvW" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7L15.8 12z"/></svg></span>
       <span class="info"><span class="p">YOUTUBE</span><br><span class="h">@journeywithshannon</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://x.com/journeywshannon?s=11" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L7.1 3.7H5.3z"/></svg></span>
       <span class="info"><span class="p">X</span><br><span class="h">@journeywshannon</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.instagram.com/journeywithshannon__?igsh=MXM5NTBlbzViYTVuNw%3D%3D&utm_source=qr" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
       <span class="info"><span class="p">INSTAGRAM</span><br><span class="h">@journeywithshannon__</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.instagram.com/journeywithshannon_?igsh=MXFnMWVvZnpyODNidg%3D%3D&utm_source=qr" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
       <span class="info"><span class="p">INSTAGRAM &middot; 2</span><br><span class="h">@journeywithshannon_</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.tiktok.com/@journeywithshannon?_r=1&_t=ZS-98A6J1pxTyW" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.6 1h-3.3v14.9a3.1 3.1 0 1 1-3.1-3.1c.3 0 .7.1 1 .2V9.6a6.5 6.5 0 0 0-1-.1 6.4 6.4 0 1 0 6.4 6.4V8.2A8 8 0 0 0 21 9.7V6.4a4.8 4.8 0 0 1-4.4-5.4z"/></svg></span>
       <span class="info"><span class="p">TIKTOK</span><br><span class="h">@journeywithshannon</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.threads.com/@journeywithshannon__?igshid=NTc4MTIwNjQ2YQ%3D%3D" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.7 11.2c-.1 0-.2-.1-.3-.1-.2-3.2-1.9-5-4.9-5h-.1c-1.8 0-3.2.7-4.1 2.1l1.6 1.1c.7-1 1.7-1.2 2.5-1.2.9 0 1.7.3 2.1.8.3.4.6.9.6 1.6a11 11 0 0 0-2.5-.1c-2.5.1-4.1 1.6-4 3.6 0 1 .6 1.9 1.5 2.4.8.5 1.7.7 2.7.6 1.3-.1 2.3-.6 3-1.5.5-.7.8-1.6.9-2.7.6.4 1 .8 1.3 1.4.4 1 .5 2.6-.9 4-1.2 1.2-2.7 1.7-4.9 1.7-2.5 0-4.3-.8-5.5-2.4-1.1-1.5-1.7-3.6-1.7-6.3 0-2.7.6-4.8 1.7-6.3C7.9 3.3 9.7 2.5 12.2 2.5c2.5 0 4.4.8 5.6 2.4.6.8 1 1.7 1.3 2.9l1.9-.5c-.3-1.4-.9-2.6-1.6-3.6C17.8 1.6 15.4.6 12.2.6 9.1.6 6.7 1.6 5.1 3.7 3.7 5.6 3 8.1 3 11.1s.7 5.6 2.1 7.4c1.6 2.1 4 3.2 7.1 3.2 2.7 0 4.7-.7 6.3-2.3 2.1-2.1 2-4.7 1.3-6.3-.5-1.2-1.5-2.1-2.7-2.7l.6.8zm-4.9 4.4c-1.1.1-2.2-.4-2.3-1.5 0-.8.6-1.7 2.4-1.8h.5c.7 0 1.3.1 1.9.2-.2 2.2-1.3 3-2.5 3.1z"/></svg></span>
       <span class="info"><span class="p">THREADS</span><br><span class="h">@journeywithshannon__</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://bsky.app/profile/journeywithshannon.bsky.social" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.4 2.8C8 4.7 10.8 8.6 12 10.7c1.2-2.1 4-6 6.6-7.9C20.4 1.4 23 .3 23 3.8c0 .7-.4 5.8-.6 6.6-.8 2.9-3.6 3.6-6.1 3.2 4.4.7 5.5 3.2 3.1 5.6-4.6 4.6-6.6-1.2-7.2-2.6-.1-.3-.2-.4-.2-.3 0-.1-.1 0-.2.3-.6 1.4-2.6 7.2-7.2 2.6-2.4-2.4-1.3-4.9 3.1-5.6-2.5.4-5.3-.3-6.1-3.2-.2-.8-.6-5.9-.6-6.6 0-3.5 2.6-2.4 4.4-1z"/></svg></span>
       <span class="info"><span class="p">BLUESKY</span><br><span class="h">@journeywithshannon.bsky.social</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.facebook.com/share/1JM5QaSqea/?mibextid=wwXIfr" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
       <span class="info"><span class="p">FACEBOOK</span><br><span class="h">Journey With Shannon — page</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.facebook.com/share/18BB4VMApp/?mibextid=wwXIfr" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
       <span class="info"><span class="p">FACEBOOK &middot; 2</span><br><span class="h">Second page</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
     <a class="row" href="https://www.facebook.com/share/g/18r8P5c9DA/?mibextid=wwXIfr" rel="noopener">
       <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12.75a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8zm6.8-1.13a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm-13.6 0a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm13.6 1.7c-.9 0-1.8.3-2.5.9a5.7 5.7 0 0 1 2 4.3v.6h3.9a.85.85 0 0 0 .85-.85 4.25 4.25 0 0 0-4.25-4.95zm-13.6 0A4.25 4.25 0 0 0 .95 18.3c0 .5.4.85.85.85h3.9v-.6c0-1.7.75-3.2 2-4.3a3.9 3.9 0 0 0-2.5-.93zm6.8 1.13a4.53 4.53 0 0 0-4.53 4.53v.6c0 .5.4.85.85.85h7.36c.47 0 .85-.38.85-.85v-.6A4.53 4.53 0 0 0 12 14.45z"/></svg></span>
       <span class="info"><span class="p">FACEBOOK GROUP</span><br><span class="h">Join the community</span></span>
-      <span class="go" aria-hidden="true">&rarr;</span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
     </a>
 
   </div>
 
   <footer>
-    <p><span class="gold">Journey With Shannon</span> &middot; Australia</p>
-    <p>Exclusive content is strictly <span class="gold">18+</span>. This page contains no explicit material.</p>
+    <p><span class="blue">Journey With Shannon</span> &middot; Australia</p>
+    <p>Exclusive content is strictly <span class="pink">18+</span>. This page contains no explicit material.</p>
     <p>&copy; <span id="yr">2026</span> JWS. All links above are the only official Journey With Shannon accounts.</p>
   </footer>
 
