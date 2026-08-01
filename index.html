@@ -20,8 +20,8 @@
 <meta name="twitter:description" content="Every official Journey With Shannon link in one place. 18+.">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png">
 
-<link rel="icon" href="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png">
-<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -499,7 +499,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
 })();
 (function(){
-  var LIST_ID = 'REPLACE_LIST_ID'; /* Klaviyo > Lists & Segments > your list > Settings > List ID (6 chars) */
+  var LIST_ID = 'SZqZXF';
   var form = document.getElementById('kform');
   if(!form) return;
   var input = document.getElementById('kemail');
@@ -509,7 +509,6 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     e.preventDefault();
     var email = (input.value || '').trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ show('Enter a valid email address.', false); return; }
-    if(LIST_ID === 'REPLACE_LIST_ID'){ show('Signups open soon — follow above in the meantime.', false); return; }
     var btn = form.querySelector('button'); btn.disabled = true;
     fetch('https://a.klaviyo.com/client/subscriptions/?company_id=YyrFeN', {
       method:'POST',
