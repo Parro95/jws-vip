@@ -259,6 +259,42 @@ h1{
   .hint{display:none}
 }
 
+/* ---------- email capture ---------- */
+.capture{
+  margin-top:34px;border-radius:var(--radius);padding:2px;
+  background:linear-gradient(120deg,var(--blue),var(--pink));
+  box-shadow:0 18px 44px -18px rgba(0,175,240,.4);
+}
+.capture-inner{
+  border-radius:16px;background:var(--panel);
+  padding:24px 22px;text-align:center;
+}
+.capture h2{
+  font-family:'Archivo Black',sans-serif;font-size:19px;
+  letter-spacing:.03em;text-transform:uppercase;
+}
+.capture .sub{font-size:12px;color:var(--muted);margin:8px 0 16px;line-height:1.7}
+.capture-form{display:flex;gap:8px}
+.capture-form input{
+  flex:1;min-width:0;border-radius:12px;
+  border:1px solid rgba(245,249,253,.15);
+  background:var(--stage);color:var(--white);
+  font-family:inherit;font-size:13px;padding:13px 14px;outline:none;
+}
+.capture-form input:focus{border-color:var(--blue)}
+.capture-form button{
+  border:none;border-radius:12px;cursor:pointer;
+  background:linear-gradient(120deg,var(--blue),var(--blue-deep));
+  color:#04121B;font-family:inherit;font-weight:600;
+  font-size:11px;letter-spacing:.14em;padding:0 18px;text-transform:uppercase;
+  transition:filter .18s ease;
+}
+@media(hover:hover){.capture-form button:hover{filter:brightness(1.15)}}
+.capture-msg{font-size:11px;margin-top:10px;display:none;line-height:1.6}
+.capture-msg.ok{display:block;color:var(--blue)}
+.capture-msg.err{display:block;color:var(--pink)}
+.capture .fine{font-size:9.5px;color:var(--muted);margin-top:12px;opacity:.8}
+
 /* ---------- about ---------- */
 .about{
   margin-top:34px;
@@ -405,6 +441,19 @@ footer .pink{color:var(--pink)}
     <span class="hint" id="shint">SWIPE FOR MORE &rarr;</span>
   </div>
 
+  <div class="capture">
+    <div class="capture-inner">
+      <h2>Join the journey</h2>
+      <p class="sub">Drops, exclusive offers and new content — straight to your inbox, before anywhere else.</p>
+      <form class="capture-form" id="kform" novalidate>
+        <input type="email" id="kemail" name="email" placeholder="your@email.com" autocomplete="email" inputmode="email" aria-label="Email address">
+        <button type="submit">Join</button>
+      </form>
+      <p class="capture-msg" id="kmsg"></p>
+      <p class="fine">No spam, unsubscribe anytime. 18+.</p>
+    </div>
+  </div>
+
   <p class="eyebrow">About</p>
   <section class="about">
     <b>Shannon Parison</b> — better known as <b>Journey With Shannon</b> — is an Australian
@@ -449,6 +498,36 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     });
   });
 })();
+(function(){
+  var LIST_ID = 'REPLACE_LIST_ID'; /* Klaviyo > Lists & Segments > your list > Settings > List ID (6 chars) */
+  var form = document.getElementById('kform');
+  if(!form) return;
+  var input = document.getElementById('kemail');
+  var msg = document.getElementById('kmsg');
+  function show(t, ok){ msg.textContent = t; msg.className = 'capture-msg ' + (ok ? 'ok' : 'err'); }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var email = (input.value || '').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ show('Enter a valid email address.', false); return; }
+    if(LIST_ID === 'REPLACE_LIST_ID'){ show('Signups open soon — follow above in the meantime.', false); return; }
+    var btn = form.querySelector('button'); btn.disabled = true;
+    fetch('https://a.klaviyo.com/client/subscriptions/?company_id=YyrFeN', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','revision':'2024-10-15'},
+      body: JSON.stringify({data:{type:'subscription',attributes:{
+        custom_source: location.hostname,
+        profile:{data:{type:'profile',attributes:{email: email}}}
+      },relationships:{list:{data:{type:'list',id: LIST_ID}}}}})
+    }).then(function(r){
+      if(r.ok || r.status === 202){ show("You're in — check your inbox to confirm.", true); form.reset(); }
+      else { show('Something went wrong — try again in a minute.', false); }
+    }).catch(function(){ show('Something went wrong — try again in a minute.', false); })
+      .finally(function(){ btn.disabled = false; });
+  });
+})();
 </script>
+<!-- Klaviyo onsite tracking + forms -->
+<script async type="text/javascript"
+  src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=YyrFeN"></script>
 </body>
 </html>
