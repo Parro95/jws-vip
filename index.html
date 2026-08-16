@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Journey With Shannon — Top 1% OnlyFans Creator | Official Links</title>
-<meta name="description" content="Top 1% OnlyFans creator. The official link hub for Journey With Shannon — Australian fitness &amp; lifestyle creator and founder of JWS Swimwear. 18+.">
+<meta name="description" content="Top 1% OnlyFans creator. The official link hub for Journey With Shannon — Australian fitness &amp; lifestyle creator. 18+.">
 <link rel="canonical" href="https://vip.journeywithshannon.com/">
 <meta name="theme-color" content="#07090D">
 
@@ -37,6 +37,7 @@
   "image": "https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png",
   "sameAs": [
     "https://onlyfans.com/journeywithshannon",
+    "https://fansly.com/JourneywithShannon",
     "https://t.me/vipjws",
     "https://youtube.com/@journeywithshannon",
     "https://x.com/journeywshannon",
@@ -48,15 +49,27 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Is this really Shannon?","acceptedAnswer":{"@type":"Answer","text":"Yes — this is the only official link page. Every account listed here is real, and anything found elsewhere under this name isn't Shannon."}},
+    {"@type":"Question","name":"OnlyFans or Fansly — what's the difference?","acceptedAnswer":{"@type":"Answer","text":"Same journey, same exclusive content on both platforms. Pick whichever you already use. Both are 18+."}},
+    {"@type":"Question","name":"Is the Telegram actually free?","acceptedAnswer":{"@type":"Answer","text":"Completely free. It's the central chat hub — updates and drops land there first."}},
+    {"@type":"Question","name":"How do I hear about new drops first?","acceptedAnswer":{"@type":"Answer","text":"Join the email list on the page. Drops, offers and new content go to the inbox first. No spam, unsubscribe anytime."}}
+  ]
+}
+</script>
 
 <style>
 :root{
-  --stage:#07090D;
+  --stage:#07090D;          /* near-black stage */
   --panel:#0D1119;
   --panel-2:#131A26;
-  --blue:#00AFF0;
+  --blue:#00AFF0;           /* OnlyFans blue */
   --blue-deep:#0086C9;
-  --pink:#FF2D78;
+  --pink:#FF2D78;           /* revue neon pink */
   --pink-deep:#C71B57;
   --white:#F5F9FD;
   --muted:#7C8798;
@@ -67,14 +80,19 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--stage);color:var(--white);
+  background:var(--stage);
+  color:var(--white);
   font-family:'JetBrains Mono',ui-monospace,monospace;
-  font-size:15px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
-.container{max-width:560px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+.wrap{max-width:560px;margin:0 auto;padding:0 20px calc(56px + env(safe-area-inset-bottom));position:relative}
 
 /* ---------- stage spotlights ---------- */
 .lights{position:fixed;inset:0;pointer-events:none;z-index:0}
@@ -82,37 +100,54 @@ a{color:inherit;text-decoration:none}
 .beam-blue{top:-18%;left:-38%;background:radial-gradient(circle,rgba(0,175,240,.34),transparent 60%);animation:breathe 7s ease-in-out infinite}
 .beam-pink{top:-10%;right:-42%;background:radial-gradient(circle,rgba(255,45,120,.26),transparent 60%);animation:breathe 7s ease-in-out 3.5s infinite}
 @keyframes breathe{0%,100%{opacity:.35}50%{opacity:.6}}
+.wrap>*{position:relative;z-index:1}
 
-/* ---------- nav ---------- */
-nav{
+/* ---------- sticky nav ---------- */
+nav.top{
   position:sticky;top:0;z-index:50;
-  background:rgba(7,9,13,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin:0 -20px;padding:13px 20px;
+  background:rgba(7,9,13,.82);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(245,249,253,.06);
 }
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:58px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{width:28px;height:28px;object-fit:contain}
-.brand span{font-family:'Archivo Black',sans-serif;font-size:11px;letter-spacing:.18em}
-.nav-right{display:flex;align-items:center;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand img{width:28px;height:28px;object-fit:contain;flex-shrink:0}
+.brand span{
+  font-family:'Archivo Black',sans-serif;
+  font-size:11px;letter-spacing:.16em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-links{display:none}
 .age-pill{
-  font-size:10px;letter-spacing:.14em;color:var(--pink);
+  font-size:9px;letter-spacing:.14em;color:var(--pink);
   border:1px solid var(--line-pink);border-radius:999px;
-  padding:4px 10px;white-space:nowrap;
+  padding:4px 9px;white-space:nowrap;
 }
 .nav-cta{
-  display:none;align-items:center;
   background:linear-gradient(120deg,var(--blue),var(--blue-deep));
-  color:#04121B;font-weight:600;font-size:10px;letter-spacing:.16em;
-  border-radius:999px;padding:9px 18px;text-transform:uppercase;
+  color:#04121B;font-weight:600;
+  font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  border-radius:999px;padding:8px 13px;white-space:nowrap;
   transition:filter .18s ease;
 }
 
-/* ---------- hero ---------- */
-.hero{position:relative;padding:38px 0 10px;text-align:center}
-.hero-grid{display:grid;gap:22px;justify-items:center;align-items:center}
+/* ---------- show poster hero ---------- */
+header.hero{padding:34px 0 8px}
+.hero-grid{display:grid;gap:24px;justify-items:center;align-items:center}
 .hero-side{order:-1}
+.hero-copy{text-align:center;min-width:0}
+.eyebrow-top{
+  display:inline-block;
+  font-size:10px;letter-spacing:.3em;color:var(--blue);
+  border:1px solid var(--line-blue);border-radius:999px;
+  padding:6px 16px;margin-bottom:20px;
+  background:rgba(0,175,240,.06);
+}
 .portrait{
-  width:118px;height:118px;border-radius:50%;padding:3px;
+  width:150px;height:150px;border-radius:50%;
+  padding:3px;
   background:conic-gradient(from 40deg,var(--blue),var(--pink),var(--blue));
   box-shadow:0 0 44px rgba(0,175,240,.35), 0 0 80px rgba(255,45,120,.18);
 }
@@ -121,24 +156,38 @@ nav{
   width:100%;height:100%;border-radius:50%;background:var(--panel-2);
   display:none;align-items:center;justify-content:center;
 }
-.portrait .mono-fallback img{width:62%;height:62%;object-fit:contain}
-.eyebrow-top{
-  display:inline-block;font-size:10px;letter-spacing:.34em;color:var(--blue);
-  border:1px solid var(--line-blue);border-radius:999px;
-  padding:6px 16px;margin-bottom:18px;background:rgba(0,175,240,.06);
-}
+.portrait .mono-fallback img{width:62%;height:62%;object-fit:contain;border-radius:0;background:transparent}
 h1{
   font-family:'Archivo Black',sans-serif;
   font-size:clamp(28px,9.2vw,48px);
-  line-height:.95;letter-spacing:.01em;text-transform:uppercase;
+  line-height:.95;letter-spacing:.01em;
+  text-transform:uppercase;
   background:linear-gradient(100deg,var(--white) 30%,var(--blue) 55%,var(--pink) 85%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:var(--blue);
 }
-.tagline{margin-top:12px;font-size:12px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+.tagline{
+  margin-top:12px;font-size:12px;letter-spacing:.22em;color:var(--muted);
+  text-transform:uppercase;
+}
 .tagline b{color:var(--white);font-weight:600}
-.hero-note{margin:18px auto 0;max-width:420px;font-size:12px;color:var(--muted);line-height:1.7}
+.hero-note{
+  margin:18px auto 0;max-width:420px;
+  font-size:12px;color:var(--muted);line-height:1.7;
+}
 .hero-note em{color:var(--blue);font-style:normal}
+.hero-ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.hcta{
+  border-radius:999px;padding:13px 20px;
+  font-family:'Archivo Black',sans-serif;font-size:12px;
+  letter-spacing:.05em;text-transform:uppercase;
+  transition:transform .18s ease, filter .18s ease;
+}
+.hcta-blue{
+  background:linear-gradient(120deg,var(--blue),var(--blue-deep));color:#04121B;
+  box-shadow:0 14px 34px -14px rgba(0,175,240,.55);
+}
+.hcta-pink{border:1px solid var(--line-pink);color:var(--pink)}
 .stat-strip{
   display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
   margin-top:20px;
@@ -146,7 +195,7 @@ h1{
 .stat{
   border:1px solid rgba(245,249,253,.12);border-radius:12px;
   background:var(--panel);
-  padding:10px 14px;min-width:92px;
+  padding:10px 14px;min-width:92px;text-align:center;
 }
 .stat b{
   display:block;font-family:'Archivo Black',sans-serif;
@@ -154,15 +203,8 @@ h1{
 }
 .stat:nth-child(2) b{color:var(--pink)}
 .stat span{font-size:8.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-.hero-ctas{display:none;gap:12px;margin-top:26px}
-.hcta{
-  font-size:11px;letter-spacing:.16em;font-weight:600;text-transform:uppercase;
-  border-radius:999px;padding:14px 26px;transition:transform .18s ease, filter .18s ease;
-}
-.hcta-blue{background:linear-gradient(120deg,var(--blue),var(--blue-deep));color:#04121B}
-.hcta-pink{border:1px solid var(--line-pink);color:var(--pink)}
 
-/* ---------- section eyebrow ---------- */
+/* ---------- access tiers ---------- */
 .eyebrow{
   display:flex;align-items:center;gap:14px;
   font-size:10px;letter-spacing:.3em;color:var(--muted);
@@ -171,35 +213,50 @@ h1{
 .eyebrow::before,.eyebrow::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(124,135,152,.4))}
 .eyebrow::after{background:linear-gradient(90deg,rgba(124,135,152,.4),transparent)}
 
-/* ---------- access tiers ---------- */
-.tier-grid{display:grid;gap:14px}
+.tiers{display:grid;gap:14px}
 .tier{
   display:block;border-radius:var(--radius);
-  padding:22px;position:relative;overflow:hidden;
+  padding:22px;
+  position:relative;overflow:hidden;
   transition:transform .18s ease, box-shadow .18s ease;
 }
-.tier .tag{display:inline-block;font-size:9px;letter-spacing:.26em;border-radius:999px;padding:4px 12px;margin-bottom:12px}
-.tier .t{font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:.02em;text-transform:uppercase}
+.tier .tag{
+  display:inline-block;font-size:9px;letter-spacing:.26em;
+  border-radius:999px;padding:4px 12px;margin-bottom:12px;
+}
+.tier .t{font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:.02em;text-transform:uppercase;display:block}
 .tier .s{display:block;font-size:12px;margin-top:8px;line-height:1.65}
 .tier .go{
-  display:inline-flex;align-items:center;gap:8px;margin-top:16px;
-  font-size:11px;letter-spacing:.18em;font-weight:600;
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:16px;font-size:11px;letter-spacing:.18em;font-weight:600;
   border-radius:999px;padding:12px 22px;text-transform:uppercase;
 }
 .tier-of{
   background:linear-gradient(150deg,#00AFF0 0%,#0086C9 70%,#006DA6 100%);
-  color:#04121B;box-shadow:0 18px 44px -14px rgba(0,175,240,.55);
+  color:#04121B;
+  box-shadow:0 18px 44px -14px rgba(0,175,240,.55);
 }
 .tier-of .tag{background:rgba(4,18,27,.8);color:var(--blue)}
 .tier-of .s{color:rgba(4,18,27,.8)}
 .tier-of .go{background:#04121B;color:var(--blue)}
 .tier-tg{
-  background:var(--panel);border:1px solid var(--line-pink);color:var(--white);
+  background:var(--panel);
+  border:1px solid var(--line-pink);
+  color:var(--white);
   box-shadow:0 18px 44px -18px rgba(255,45,120,.35);
 }
 .tier-tg .tag{background:rgba(255,45,120,.12);color:var(--pink);border:1px solid var(--line-pink)}
 .tier-tg .s{color:var(--muted)}
 .tier-tg .go{background:linear-gradient(120deg,var(--pink),var(--pink-deep));color:#1A040C}
+.tier-fn{
+  background:var(--panel);
+  border:1px solid var(--line-blue);
+  color:var(--white);
+  box-shadow:0 18px 44px -18px rgba(0,175,240,.35);
+}
+.tier-fn .tag{background:rgba(0,175,240,.12);color:var(--blue);border:1px solid var(--line-blue)}
+.tier-fn .s{color:var(--muted)}
+.tier-fn .go{background:linear-gradient(120deg,var(--blue),var(--pink));color:#04121B}
 .tier::after{
   content:"";position:absolute;top:0;right:0;width:46%;height:100%;
   background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.10) 55%,transparent 70%);
@@ -245,7 +302,8 @@ h1{
 .dots i.on{width:16px;background:var(--blue)}
 .hint{
   display:block;text-align:center;font-size:9px;letter-spacing:.26em;
-  color:var(--muted);margin-top:10px;animation:nudge 1.6s ease-in-out infinite;
+  color:var(--muted);margin-top:10px;
+  animation:nudge 1.6s ease-in-out infinite;
 }
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
 .sarrow{display:none}
@@ -256,8 +314,14 @@ h1{
   background:linear-gradient(120deg,var(--blue),var(--pink));
   box-shadow:0 18px 44px -18px rgba(0,175,240,.4);
 }
-.capture-inner{border-radius:16px;background:var(--panel);padding:24px 22px;text-align:center}
-.capture h2{font-family:'Archivo Black',sans-serif;font-size:19px;letter-spacing:.03em;text-transform:uppercase}
+.capture-inner{
+  border-radius:16px;background:var(--panel);
+  padding:24px 22px;text-align:center;
+}
+.capture h2{
+  font-family:'Archivo Black',sans-serif;font-size:19px;
+  letter-spacing:.03em;text-transform:uppercase;
+}
 .capture .sub{font-size:12px;color:var(--muted);margin:8px 0 16px;line-height:1.7}
 .capture-form{display:flex;gap:8px}
 .capture-form input{
@@ -281,13 +345,35 @@ h1{
 
 /* ---------- about ---------- */
 .about{
-  margin-top:34px;background:var(--panel);
+  margin-top:34px;
+  background:var(--panel);
   border:1px solid rgba(245,249,253,.07);
-  border-radius:var(--radius);padding:20px 22px;
+  border-radius:var(--radius);
+  padding:20px 22px;
   font-size:12.5px;color:var(--muted);line-height:1.8;
 }
 .about b{color:var(--white);font-weight:600}
-.about a{color:var(--blue)}
+.about a{color:var(--blue);text-decoration:none}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:8px}
+.faq details{
+  background:var(--panel);
+  border:1px solid rgba(245,249,253,.07);
+  border-radius:14px;
+  margin-bottom:9px;
+  overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;list-style:none;
+  padding:15px 18px;
+  font-size:12.5px;font-weight:600;letter-spacing:.03em;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--blue);font-size:16px;flex-shrink:0}
+.faq details[open] summary::after{content:"–";color:var(--pink)}
+.faq .a{padding:0 18px 16px;font-size:12px;color:var(--muted);line-height:1.75}
 
 /* ---------- last call (repeat CTA) ---------- */
 .last-call{
@@ -318,35 +404,42 @@ h1{
   background:transparent;color:var(--pink);
   border:1px solid var(--line-pink);
 }
-@media(hover:hover){
-  .lc-btn:hover{transform:translateY(-2px)}
-  .lc-of:hover{filter:brightness(1.12)}
-  .lc-tg:hover{background:rgba(255,45,120,.08)}
+.lc-fn{
+  background:transparent;color:var(--blue);
+  border:1px solid var(--line-blue);
 }
 
 /* ---------- footer ---------- */
 footer{
-  margin-top:44px;border-top:1px solid rgba(245,249,253,.07);
-  padding:26px 0 calc(48px + env(safe-area-inset-bottom));
+  margin-top:42px;padding-top:22px;
+  border-top:1px solid rgba(245,249,253,.07);
   font-size:11px;color:var(--muted);line-height:1.8;text-align:center;
 }
+footer .blue{color:var(--blue)}
+footer .pink{color:var(--pink)}
 .jws-strip{
   display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;
   margin:0 0 16px;font-size:11px;
 }
 .jws-strip a{color:var(--muted);border-bottom:1px solid rgba(124,135,152,.35);padding-bottom:1px;transition:color .18s ease,border-color .18s ease}
-footer .blue{color:var(--blue)}
-footer .pink{color:var(--pink)}
 
-/* ---------- hover ---------- */
+/* ---------- hover (pointer devices) ---------- */
 @media(hover:hover){
-  .nav-cta:hover,.hcta-blue:hover,.capture-form button:hover{filter:brightness(1.15)}
+  .nav-cta:hover,.hcta-blue:hover{filter:brightness(1.12)}
   .hcta:hover{transform:translateY(-2px)}
+  .hcta-pink:hover{background:rgba(255,45,120,.08)}
   .tier:hover{transform:translateY(-3px)}
   .tier-of:hover{box-shadow:0 26px 56px -14px rgba(0,175,240,.7)}
   .tier-tg:hover{box-shadow:0 26px 56px -18px rgba(255,45,120,.5)}
+  .tier-fn:hover{box-shadow:0 26px 56px -18px rgba(0,175,240,.5)}
   .scard:hover{border-color:var(--blue);transform:translateY(-2px)}
+  .capture-form button:hover{filter:brightness(1.15)}
+  .lc-btn:hover{transform:translateY(-2px)}
+  .lc-of:hover{filter:brightness(1.12)}
+  .lc-tg:hover{background:rgba(255,45,120,.08)}
+  .lc-fn:hover{background:rgba(0,175,240,.08)}
   .jws-strip a:hover{color:var(--blue);border-color:var(--blue)}
+  .nav-links a:hover{color:var(--blue)}
   .sarrow{
     display:flex;position:absolute;top:36%;transform:translateY(-50%);
     width:34px;height:34px;border-radius:50%;
@@ -361,37 +454,39 @@ footer .pink{color:var(--pink)}
   .hint{display:none}
 }
 
-/* ---------- desktop ---------- */
+/* ---------- desktop ≥780px ---------- */
 @media(min-width:780px){
-  .container{max-width:1100px;padding:0 32px}
+  .wrap{max-width:1100px}
+  nav.top{padding:14px 32px;margin:0 -32px}
   .brand span{font-size:12px}
-  .nav-cta{display:inline-flex}
-  .hero{padding:80px 0 46px;text-align:left}
-  .hero-grid{grid-template-columns:1.15fr .85fr;gap:44px}
+  .nav-links{display:flex;gap:20px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .nav-links a{transition:color .18s ease}
+  .faq{max-width:780px;margin-left:auto;margin-right:auto}
+  header.hero{padding:56px 0 16px}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
   .hero-side{order:2}
-  .portrait{width:250px;height:250px;padding:4px}
-  h1{font-size:clamp(48px,5.8vw,80px)}
+  .hero-copy{text-align:left}
+  .portrait{width:250px;height:250px}
+  h1{font-size:clamp(48px,5.5vw,64px)}
   .hero-note{margin-left:0;max-width:480px}
-  .hero-ctas{display:flex}
-  .eyebrow{margin:56px 0 22px}
-  .tier-grid{grid-template-columns:1fr 1fr;gap:20px}
-  .tier{padding:28px}
-  .slider::after,.dots,.hint{display:none}
-  .sarrow{display:none !important}
+  .hero-ctas,.stat-strip{justify-content:flex-start}
+  .tiers{grid-template-columns:repeat(3,1fr)}
+  .slider::after{display:none}
   .track{
-    flex-wrap:wrap;overflow:visible;justify-content:center;
-    gap:12px;padding:4px 0 0;scroll-snap-type:none;
+    display:grid;grid-template-columns:repeat(5,1fr);
+    overflow:visible;scroll-snap-type:none;padding-bottom:4px;
   }
-  .scard{flex:0 0 158px;padding:22px 14px 18px}
-  .capture{max-width:660px;margin:44px auto 0}
-  .capture-inner{padding:30px 34px}
-  .about{max-width:780px;margin:34px auto 0;padding:26px 30px;font-size:13.5px}
+  .scard{flex:none}
+  .dots,.hint,.sarrow{display:none !important}
+  .capture{max-width:660px;margin-left:auto;margin-right:auto}
+  .about{max-width:780px;margin-left:auto;margin-right:auto}
+  .last-call{max-width:660px;margin-left:auto;margin-right:auto}
 }
 
 @media (prefers-reduced-motion:reduce){
   .beam-blue,.beam-pink{animation:none}
   .hint{animation:none}
-  .tier,.scard,.hcta{transition:none}
+  .tier,.scard,.hcta,.lc-btn{transition:none}
   html{scroll-behavior:auto}
 }
 </style>
@@ -403,133 +498,161 @@ footer .pink{color:var(--pink)}
   <div class="beam beam-pink"></div>
 </div>
 
-<nav>
-  <div class="container nav-in">
-    <a class="brand" href="https://journeywithshannon.com" aria-label="Journey With Shannon home">
+<div class="wrap">
+
+  <nav class="top">
+    <a class="brand" href="https://vip.journeywithshannon.com/" aria-label="Journey With Shannon home">
       <img src="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png" alt="" onerror="this.style.display='none'">
       <span>JOURNEY WITH SHANNON</span>
     </a>
+    <span class="nav-links">
+      <a href="#access">Access</a>
+      <a href="#follow">Socials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#signup">Join the list</a>
+    </span>
     <span class="nav-right">
       <span class="age-pill">18+ CONTENT</span>
       <a class="nav-cta" href="https://onlyfans.com/journeywithshannon" rel="noopener">Subscribe</a>
     </span>
-  </div>
-</nav>
+  </nav>
 
-<header class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow-top">&#9733; TOP 1% ONLYFANS CREATOR &#9733;</span>
-      <h1>Journey With<br>Shannon</h1>
-      <p class="tagline"><b>Fitness</b> &middot; Lifestyle &middot; <b>Exclusive content</b></p>
-      <p class="hero-note">
-        Australia's hottest export since Vegemite — fitness, lifestyle and the content
-        you won't catch on the feed. Every real link lives on this page.
-        <em>If it's not here, it's not me.</em>
-      </p>
-      <div class="hero-ctas">
-        <a class="hcta hcta-blue" href="https://onlyfans.com/journeywithshannon" rel="noopener">Subscribe on OnlyFans</a>
-        <a class="hcta hcta-pink" href="https://t.me/vipjws" rel="noopener">Join Telegram — free</a>
+  <!-- show poster hero -->
+  <header class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow-top">&#9733; TOP 1% ONLYFANS CREATOR &#9733;</span>
+        <h1>Journey With<br>Shannon</h1>
+        <p class="tagline"><b>Fitness</b> &middot; Lifestyle &middot; <b>Exclusive content</b></p>
+        <p class="hero-note">
+          Australia's hottest export since Vegemite — fitness, lifestyle and the content
+          you won't catch on the feed. Every real link lives on this page.
+          <em>If it's not here, it's not me.</em>
+        </p>
+        <div class="hero-ctas">
+          <a class="hcta hcta-blue" href="https://onlyfans.com/journeywithshannon" rel="noopener">Subscribe on OnlyFans</a>
+          <a class="hcta hcta-pink" href="https://fansly.com/JourneywithShannon" rel="noopener">Subscribe on Fansly</a>
+        </div>
+        <div class="stat-strip">
+          <span class="stat"><b>TOP 1%</b><span>on OnlyFans</span></span>
+          <span class="stat"><b>100%</b><span>Aussie</span></span>
+          <span class="stat"><b>10+</b><span>platforms</span></span>
+        </div>
       </div>
-      <div class="stat-strip">
-        <span class="stat"><b>TOP 1%</b><span>on OnlyFans</span></span>
-        <span class="stat"><b>100%</b><span>Aussie</span></span>
-        <span class="stat"><b>10+</b><span>platforms</span></span>
+      <div class="hero-side">
+        <div class="portrait">
+          <img src="shannon.jpg" alt="Shannon"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <span class="mono-fallback" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png" alt=""></span>
+        </div>
       </div>
     </div>
-    <div class="hero-side">
-      <div class="portrait">
-        <img src="shannon.jpg" alt="Shannon"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <span class="mono-fallback" aria-hidden="true"><img src="https://cdn.jsdelivr.net/gh/Parro95/jws-assets/logo.png" alt=""></span>
-      </div>
-    </div>
-  </div>
-</header>
+  </header>
 
-<section class="container" id="access">
+  <!-- access tiers -->
   <p class="eyebrow">Choose your access</p>
-  <div class="tier-grid">
-  <a class="tier tier-of" href="https://onlyfans.com/journeywithshannon" rel="noopener">
-    <span class="tag">SUBSCRIPTION</span>
-    <span class="t">OnlyFans</span>
-    <span class="s">My subscription page — the exclusive stuff, straight from Down Under. You won't see it anywhere else. 18+.</span>
-    <span class="go">Subscribe &rarr;</span>
-  </a>
 
-  <a class="tier tier-tg" href="https://t.me/vipjws" rel="noopener">
-    <span class="tag">FREE TO JOIN</span>
-    <span class="t">Telegram VIP</span>
-    <span class="s">My central chat page — I'm actually in there. Updates drop here first, and you can talk to me directly. Free to join.</span>
-    <span class="go">Join free &rarr;</span>
-  </a>
+  <div class="tiers" id="access">
+
+    <a class="tier tier-of" href="https://onlyfans.com/journeywithshannon" rel="noopener">
+      <span class="tag">SUBSCRIPTION</span>
+      <span class="t">OnlyFans</span>
+      <span class="s">My subscription page — the exclusive stuff, straight from Down Under. You won't see it anywhere else. 18+.</span>
+      <span class="go">Subscribe &rarr;</span>
+    </a>
+
+    <a class="tier tier-fn" href="https://fansly.com/JourneywithShannon" rel="noopener">
+      <span class="tag">SUBSCRIPTION</span>
+      <span class="t">Fansly</span>
+      <span class="s">Prefer Fansly? Same exclusive content, same journey — subscribe where you're at home. 18+.</span>
+      <span class="go">Subscribe &rarr;</span>
+    </a>
+
+    <a class="tier tier-tg" href="https://t.me/vipjws" rel="noopener">
+      <span class="tag">FREE TO JOIN</span>
+      <span class="t">Telegram VIP</span>
+      <span class="s">My central chat page — I'm actually in there. Updates drop here first, and you can talk to me directly. Free to join.</span>
+      <span class="go">Join free &rarr;</span>
+    </a>
+
+
   </div>
-</section>
 
-<section class="container">
+  <!-- socials -->
   <p class="eyebrow">Follow the journey</p>
-  <div class="slider">
+
+  <div class="slider" id="follow">
     <button class="sarrow prev" aria-label="Scroll back">&larr;</button>
     <button class="sarrow next" aria-label="Scroll forward">&rarr;</button>
     <div class="track" id="strack" aria-label="Social links">
+
       <a class="scard" href="https://youtube.com/@journeywithshannon?si=4gWSuRNL3HQUQNvW" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.5 15.5v-7L15.8 12z"/></svg></span>
         <span class="p">YOUTUBE</span>
         <span class="h">@journeywithshannon</span>
       </a>
+
       <a class="scard" href="https://x.com/journeywshannon?s=11" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.3 22h-6.3l-4.9-6.4L6.5 22H3.4l7.3-8.3L1 2h6.4l4.4 5.9zm-1.1 18h1.7L7.1 3.7H5.3z"/></svg></span>
         <span class="p">X</span>
         <span class="h">@journeywshannon</span>
       </a>
+
       <a class="scard" href="https://www.instagram.com/journeywithshannon__?igsh=MXM5NTBlbzViYTVuNw%3D%3D&utm_source=qr" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
         <span class="p">INSTAGRAM</span>
         <span class="h">@journeywithshannon__</span>
       </a>
+
       <a class="scard" href="https://www.instagram.com/journeywithshannon_?igsh=MXFnMWVvZnpyODNidg%3D%3D&utm_source=qr" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3a3.8 3.8 0 0 1-2.3 2.3c-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4a3.8 3.8 0 0 1-2.3-2.3c-.2-.4-.4-1.1-.4-2.3-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.5.2-1.7.3-.4.2-.6.3-.9.6-.3.3-.5.5-.6.9-.1.2-.2.6-.3 1.7-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.5.3 1.7.2.4.3.6.6.9.3.3.5.5.9.6.2.1.6.2 1.7.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.5-.2 1.7-.3.4-.2.6-.3.9-.6.3-.3.5-.5.6-.9.1-.2.2-.6.3-1.7.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.5-.3-1.7a2 2 0 0 0-.6-.9 2 2 0 0 0-.9-.6c-.2-.1-.6-.2-1.7-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8zm0 2a2.4 2.4 0 1 0 0 4.8 2.4 2.4 0 0 0 0-4.8zm4.6-2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg></span>
         <span class="p">INSTAGRAM &middot; 2</span>
         <span class="h">@journeywithshannon_</span>
       </a>
+
       <a class="scard" href="https://www.tiktok.com/@journeywithshannon?_r=1&_t=ZS-98A6J1pxTyW" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.6 1h-3.3v14.9a3.1 3.1 0 1 1-3.1-3.1c.3 0 .7.1 1 .2V9.6a6.5 6.5 0 0 0-1-.1 6.4 6.4 0 1 0 6.4 6.4V8.2A8 8 0 0 0 21 9.7V6.4a4.8 4.8 0 0 1-4.4-5.4z"/></svg></span>
         <span class="p">TIKTOK</span>
         <span class="h">@journeywithshannon</span>
       </a>
+
       <a class="scard" href="https://www.threads.com/@journeywithshannon__?igshid=NTc4MTIwNjQ2YQ%3D%3D" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.7 11.2c-.1 0-.2-.1-.3-.1-.2-3.2-1.9-5-4.9-5h-.1c-1.8 0-3.2.7-4.1 2.1l1.6 1.1c.7-1 1.7-1.2 2.5-1.2.9 0 1.7.3 2.1.8.3.4.6.9.6 1.6a11 11 0 0 0-2.5-.1c-2.5.1-4.1 1.6-4 3.6 0 1 .6 1.9 1.5 2.4.8.5 1.7.7 2.7.6 1.3-.1 2.3-.6 3-1.5.5-.7.8-1.6.9-2.7.6.4 1 .8 1.3 1.4.4 1 .5 2.6-.9 4-1.2 1.2-2.7 1.7-4.9 1.7-2.5 0-4.3-.8-5.5-2.4-1.1-1.5-1.7-3.6-1.7-6.3 0-2.7.6-4.8 1.7-6.3C7.9 3.3 9.7 2.5 12.2 2.5c2.5 0 4.4.8 5.6 2.4.6.8 1 1.7 1.3 2.9l1.9-.5c-.3-1.4-.9-2.6-1.6-3.6C17.8 1.6 15.4.6 12.2.6 9.1.6 6.7 1.6 5.1 3.7 3.7 5.6 3 8.1 3 11.1s.7 5.6 2.1 7.4c1.6 2.1 4 3.2 7.1 3.2 2.7 0 4.7-.7 6.3-2.3 2.1-2.1 2-4.7 1.3-6.3-.5-1.2-1.5-2.1-2.7-2.7l.6.8zm-4.9 4.4c-1.1.1-2.2-.4-2.3-1.5 0-.8.6-1.7 2.4-1.8h.5c.7 0 1.3.1 1.9.2-.2 2.2-1.3 3-2.5 3.1z"/></svg></span>
         <span class="p">THREADS</span>
         <span class="h">@journeywithshannon__</span>
       </a>
+
       <a class="scard" href="https://bsky.app/profile/journeywithshannon.bsky.social" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.4 2.8C8 4.7 10.8 8.6 12 10.7c1.2-2.1 4-6 6.6-7.9C20.4 1.4 23 .3 23 3.8c0 .7-.4 5.8-.6 6.6-.8 2.9-3.6 3.6-6.1 3.2 4.4.7 5.5 3.2 3.1 5.6-4.6 4.6-6.6-1.2-7.2-2.6-.1-.3-.2-.4-.2-.3 0-.1-.1 0-.2.3-.6 1.4-2.6 7.2-7.2 2.6-2.4-2.4-1.3-4.9 3.1-5.6-2.5.4-5.3-.3-6.1-3.2-.2-.8-.6-5.9-.6-6.6 0-3.5 2.6-2.4 4.4-1z"/></svg></span>
         <span class="p">BLUESKY</span>
         <span class="h">@journeywithshannon.bsky.social</span>
       </a>
+
       <a class="scard" href="https://www.facebook.com/share/1JM5QaSqea/?mibextid=wwXIfr" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
         <span class="p">FACEBOOK</span>
         <span class="h">Journey With Shannon — page</span>
       </a>
+
       <a class="scard" href="https://www.facebook.com/share/18BB4VMApp/?mibextid=wwXIfr" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.6-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg></span>
         <span class="p">FACEBOOK &middot; 2</span>
         <span class="h">Second page</span>
       </a>
+
       <a class="scard" href="https://www.facebook.com/share/g/18r8P5c9DA/?mibextid=wwXIfr" rel="noopener">
         <span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 12.75a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8zm6.8-1.13a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm-13.6 0a2.55 2.55 0 1 0 0-5.1 2.55 2.55 0 0 0 0 5.1zm13.6 1.7c-.9 0-1.8.3-2.5.9a5.7 5.7 0 0 1 2 4.3v.6h3.9a.85.85 0 0 0 .85-.85 4.25 4.25 0 0 0-4.25-4.95zm-13.6 0A4.25 4.25 0 0 0 .95 18.3c0 .5.4.85.85.85h3.9v-.6c0-1.7.75-3.2 2-4.3a3.9 3.9 0 0 0-2.5-.93zm6.8 1.13a4.53 4.53 0 0 0-4.53 4.53v.6c0 .5.4.85.85.85h7.36c.47 0 .85-.38.85-.85v-.6A4.53 4.53 0 0 0 12 14.45z"/></svg></span>
         <span class="p">FACEBOOK GROUP</span>
         <span class="h">Join the community</span>
       </a>
+
     </div>
     <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <span class="hint" id="shint">SWIPE FOR MORE &rarr;</span>
   </div>
-</section>
 
-<section class="container">
-  <div class="capture">
+  <!-- email capture -->
+  <div class="capture" id="signup">
     <div class="capture-inner">
       <h2>Join the journey</h2>
       <p class="sub">Drops, offers and content you won't catch on the feed — straight to your inbox first.</p>
@@ -541,31 +664,52 @@ footer .pink{color:var(--pink)}
       <p class="fine">No spam, unsubscribe anytime. 18+.</p>
     </div>
   </div>
-</section>
 
-<section class="container">
+  <!-- about -->
   <p class="eyebrow">About</p>
   <section class="about">
     <b>Shannon</b> — <b>Journey With Shannon</b> — is an Australian
-    fitness and lifestyle creator and the founder of <a href="https://journeywithshannon.com" rel="noopener">JWS Swimwear</a>.
-    From training and transformation content to life in Australia, the journey is documented
-    across every platform on this page — with exclusive behind-the-scenes content for subscribers (18+).
+    fitness and lifestyle creator. From training and transformation content to life in
+    Australia, the journey is documented across every platform on this page — with
+    exclusive behind-the-scenes content for subscribers (18+).
   </section>
-</section>
 
-<section class="container">
-  <div class="last-call">
+  <!-- FAQ -->
+  <p class="eyebrow" id="faq">Quick answers</p>
+  <div class="faq">
+    <details>
+      <summary>Is this really Shannon?</summary>
+      <p class="a">Yes — this is the only official link page. Every account listed here is real, and anything you find elsewhere under this name isn't me.</p>
+    </details>
+    <details>
+      <summary>OnlyFans or Fansly — what's the difference?</summary>
+      <p class="a">Same journey, same exclusive content on both. Pick whichever platform you already use — there's no wrong door. Both are 18+.</p>
+    </details>
+    <details>
+      <summary>Is the Telegram actually free?</summary>
+      <p class="a">Completely. It's the central chat hub — updates and drops land there first, and you can talk to me directly.</p>
+    </details>
+    <details>
+      <summary>Do you post everything on socials?</summary>
+      <p class="a">No — the socials get the feed-friendly side of the journey. The exclusive content lives with subscribers only.</p>
+    </details>
+    <details>
+      <summary>How do I hear about new drops first?</summary>
+      <p class="a">Join the email list above. Drops, offers and new content go to the inbox before anywhere else. No spam, unsubscribe anytime.</p>
+    </details>
+  </div>
+
+  <!-- last call -->
+  <section class="last-call">
     <h2>Don't miss the journey</h2>
     <p>Still scrolling? That's your sign. Come see what the top 1% looks like — or join the chat for free.</p>
     <a class="lc-btn lc-of" href="https://onlyfans.com/journeywithshannon" rel="noopener">Subscribe on OnlyFans &rarr;</a>
+    <a class="lc-btn lc-fn" href="https://fansly.com/JourneywithShannon" rel="noopener">Subscribe on Fansly &rarr;</a>
     <a class="lc-btn lc-tg" href="https://t.me/vipjws" rel="noopener">Join the free Telegram &rarr;</a>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
+  <footer>
     <nav class="jws-strip" aria-label="More from JWS">
-      <a href="https://journeywithshannon.com" rel="noopener">JWS Swimwear</a>
       <a href="https://trade.journeywithshannon.com" rel="noopener">Learn to Trade</a>
       <a href="https://app.journeywithshannon.com" rel="noopener">Journey App</a>
       <a href="https://store.journeywithshannon.com" rel="noopener">JWS Store</a>
@@ -573,8 +717,10 @@ footer .pink{color:var(--pink)}
     <p><span class="blue">Journey With Shannon</span> &middot; Australia</p>
     <p>Exclusive content is strictly <span class="pink">18+</span>. This page contains no explicit material.</p>
     <p>&copy; <span id="yr">2026</span> JWS. All links above are the only official Journey With Shannon accounts.</p>
-  </div>
-</footer>
+    <p><a href="/privacy.html" style="border-bottom:1px solid rgba(124,135,152,.35);padding-bottom:1px">Privacy policy</a> &middot; <a href="mailto:contact@journeywithshannon.com" style="border-bottom:1px solid rgba(124,135,152,.35);padding-bottom:1px">Contact</a></p>
+  </footer>
+
+</div>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -599,7 +745,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
 })();
 (function(){
-  var LIST_ID = 'SZqZXF';
+  var LIST_ID = 'WWXaTq';
   var form = document.getElementById('kform');
   if(!form) return;
   var input = document.getElementById('kemail');
